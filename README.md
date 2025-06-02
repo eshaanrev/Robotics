@@ -1,2 +1,2 @@
 # robotics
-A repository for my robotics code.
+Only banquet code will be posted for now, just driver, no auton.
