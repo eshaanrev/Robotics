@@ -40,7 +40,7 @@ void intake_toggle() {
 }
 
 void clamp_toggle() {
-    // Add button detection - using L1 button for clamp toggle
+    // L1 button for clamp toggle
     if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_L1)) {
         if (clampClosed) {
             // Open the clamp
