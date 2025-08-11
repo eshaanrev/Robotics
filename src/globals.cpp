@@ -31,7 +31,7 @@ pros::Motor intake_motor(1);
 // Clamp
 pros::adi::Pneumatics clamp(1);
 
-// Clamp state variables
+// Clamp variables
 bool clampClosed = false;
 bool buttonPressed = false;
 
@@ -39,3 +39,4 @@ bool buttonPressed = false;
 pros::Motor lb_motor(2, pros::MotorGearset::red);
 int lb_position = 0; // Start at low position
 bool lb_pressed = false;
+
