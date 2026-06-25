@@ -13,7 +13,6 @@ extern pros::Controller controller;
 extern pros::MotorGroup left_motors;
 extern pros::MotorGroup right_motors;
 extern pros::Motor intake_motor;
-extern pros::Motor intake_motor;
 
 // LemLib
 extern lemlib::Drivetrain drivetrain;

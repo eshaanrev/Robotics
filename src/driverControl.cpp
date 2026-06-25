@@ -1,5 +1,6 @@
 #include "main.h"
-#include "globals.cpp"
+#include "globals.hpp"
+#include "driverControl.hpp"
 
 void drive(){
     int leftY = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
@@ -43,15 +44,11 @@ void clamp_toggle() {
     // L1 button for clamp toggle
     if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_L1)) {
         if (clampClosed) {
-            // Open the clamp
-            clamp_extend.set_value(false);
-            clamp_retract.set_value(true);
+            clamp.set_value(false);
             clampClosed = false;
             controller.print(0, 0, "Clamp: OPEN   ");
         } else {
-            // Close the clamp
-            clamp_extend.set_value(true);
-            clamp_retract.set_value(false);
+            clamp.set_value(true);
             clampClosed = true;
             controller.print(0, 0, "Clamp: CLOSED ");
         }
@@ -79,15 +76,5 @@ void lb_cycle() {
         lb_pressed = true;
     } else if (!controller.get_digital(pros::E_CONTROLLER_DIGITAL_A)) {
         lb_pressed = false;
-    }
-}
-
-void opcontrol() {
-    while (true) {
-        drive();
-        intake_toggle();
-        clamp_toggle();
-        lb_cycle();
-        pros::delay(50);
     }
 }
